@@ -42,7 +42,7 @@ func EjecutoLambda(ctx context.Context, request e.APIGatewayProxyRequest) (*e.AP
 		}
 		return res, nil
 	}
-	path := strings.Replace(request.PathParameters["Red-social"], os.Getenv("UrlPrefix"), "", -1)
+	path := strings.Replace(request.PathParameters["redsocialgo"], os.Getenv("UrlPrefix"), "", -1)
 	awsgo.Ctx = context.WithValue(awsgo.Ctx, models.Key("path"), path)
 	awsgo.Ctx = context.WithValue(awsgo.Ctx, models.Key("method"), request.HTTPMethod)
 	awsgo.Ctx = context.WithValue(awsgo.Ctx, models.Key("user"), secretModel.UserName)
